@@ -73,7 +73,7 @@
 <script>
   (function () {
     var ID = ${JSON.stringify(id)};
-    function metin(x) { try { return typeof x === "object" && x !== null ? JSON.stringify(x) : String(x); } catch (e) { return String(x); } }
+    function metin(x) { try { if (x instanceof Error) return x.name + ": " + x.message; return typeof x === "object" && x !== null ? JSON.stringify(x) : String(x); } catch (e) { return String(x); } }
     function gonder(tur, args) { parent.postMessage({ __pg: ID, tur: tur, args: Array.prototype.map.call(args, metin) }, "*"); }
     ["log", "info", "warn", "error"].forEach(function (k) {
       var eski = console[k];

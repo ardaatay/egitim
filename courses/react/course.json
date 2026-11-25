@@ -85,17 +85,17 @@
         {
           "id": "30-react19",
           "title": "React 19: Actions, useActionState, useOptimistic, use",
-          "draft": true
+          "minutes": 24
         },
         {
           "id": "31-suspense",
           "title": "Suspense, lazy, transition'lar ve hata sınırları",
-          "draft": true
+          "minutes": 24
         },
         {
           "id": "32-server-components",
           "title": "Server Components ve Next.js App Router",
-          "draft": true
+          "minutes": 22
         }
       ]
     },
