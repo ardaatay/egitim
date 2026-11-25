@@ -75,12 +75,12 @@
         {
           "id": "30-ingress",
           "title": "Ingress, Gateway API ve cert-manager ile TLS",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "31-networkpolicy",
           "title": "NetworkPolicy ile ağ izolasyonu",
-          "draft": true
+          "minutes": 22
         }
       ]
     },
