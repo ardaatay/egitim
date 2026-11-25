@@ -54,22 +54,22 @@
         {
           "id": "20-ag",
           "title": "Ağ: sürücüler, bridge, port yayınlama, konteynerler arası DNS",
-          "draft": true
+          "minutes": 24
         },
         {
           "id": "21-depolama",
           "title": "Depolama: volume (boş/dolu davranışı), bind mount, tmpfs",
-          "draft": true
+          "minutes": 22
         },
         {
           "id": "22-kaynak-sinyal",
           "title": "CPU/bellek sınırları, stats/top, PID 1, sinyaller, healthcheck",
-          "draft": true
+          "minutes": 22
         },
         {
           "id": "23-ortam-loglar",
           "title": "Ortam değişkenleri, yapılandırma, stdin/stdout/stderr ve loglar",
-          "draft": true
+          "minutes": 20
         }
       ]
     },
