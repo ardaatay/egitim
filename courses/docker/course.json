@@ -80,12 +80,12 @@
         {
           "id": "30-compose",
           "title": "Compose ile çok servisli uygulama: YAML, CLI, build",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "31-compose-uretim",
           "title": "Compose: ortamlar, profiller, sağlık ve bağımlılıklar",
-          "draft": true
+          "minutes": 24
         }
       ]
     },
