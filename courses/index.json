@@ -19,10 +19,9 @@
   },
   {
     "id": "react",
-    "title": "React",
+    "title": "React: Bileşenden Üretime",
     "icon": "⚛️",
-    "description": "Bileşenler, state, hook'lar ve gerçek bir uygulama.",
-    "status": "soon"
+    "description": "React'in modeli, state ve effect'ler, performans, routing, veri çekme, React 19, Server Components, TypeScript, test ve yayınlama. Kod blokları tarayıcıda canlı çalışır."
   },
   {
     "id": "oracle",

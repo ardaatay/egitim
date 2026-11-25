@@ -55,5 +55,13 @@ Gerçek bir Docker ortamında dene.
 ````
 Dış laboratuvar bağlantısı.
 
+````markdown
+```react
+import { useState } from "react";
+export default function App() { ... }
+```
+````
+Canlı React oyun alanı (assets/playground.js): düzenlenebilir kod + önizleme + konsol. React 19 esm.sh'tan, JSX/TypeScript Babel ile tarayıcıda derlenir, `export default` bileşen çizilir, çıplak paket importları (`zustand` gibi) esm.sh'a yönlendirilir.
+
 - `> **Dikkat:** ...` ile başlayan alıntılar sarı uyarı kutusu olur.
 - `<details><summary>Cevaplar</summary> ... </details>` gizlenebilir cevaplar içindir.

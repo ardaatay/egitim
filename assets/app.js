@@ -52,6 +52,7 @@
     renderer.code = (code, info) => {
       const lang = (info || "").trim().split(/\s+/)[0];
       if (lang === "quiz") return quizHTML(code);
+      if (lang === "react") return playgroundHTML(code);
       if (lang === "lab") return labHTML(code);
       const isTerm = lang === "terminal";
       const hlLang = isTerm ? "bash" : lang;
@@ -87,6 +88,21 @@
     return `<div class="quiz" data-why="${esc(why)}"><div class="q">${marked.parseInline(q.join(" "))}</div>
       ${opts.map((o) => `<button type="button" class="opt" data-right="${o.right ? 1 : 0}">${marked.parseInline(o.text)}</button>`).join("")}
       <div class="why" hidden></div></div>`;
+  }
+
+  // ```react bloğu: düzenlenebilir kod + canlı önizleme (assets/playground.js)
+  function playgroundHTML(code) {
+    const bos = `<!doctype html><meta charset="utf-8"><body style="font-family:system-ui;color:#64748b;margin:12px;font-size:14px">▶ Çalıştır'a bas (ya da kodda Ctrl+Enter)</body>`;
+    return `<div class="playground">
+      <div class="pg-ust"><span class="lang">react · düzenlenebilir</span><span class="pg-durum"></span>
+        <button type="button" data-pg="sifirla" title="İlk hâline döndür">↺ Sıfırla</button>
+        <button type="button" data-pg="kopyala">Kopyala</button>
+        <button type="button" class="run" data-pg="calistir">▶ Çalıştır</button></div>
+      <textarea spellcheck="false" autocapitalize="off" autocorrect="off" aria-label="React kodu">${esc(code.replace(/\n$/, ""))}</textarea>
+      <div class="pg-onizleme-baslik">Önizleme</div>
+      <iframe sandbox="allow-scripts allow-forms allow-modals" title="Önizleme" srcdoc="${esc(bos)}"></iframe>
+      <div class="pg-konsol" hidden></div>
+    </div>`;
   }
 
   function labHTML(src) {
@@ -240,6 +256,7 @@
     if (nb) nb.addEventListener("click", () => setDone(key, true)); // sonrakine geçmek = bitirdim
     termBtn.hidden = !course.terminal;
     tocBtn.hidden = false;
+    window.ReactPlayground?.baglan(app);
     document.querySelector(".side .current")?.scrollIntoView({ block: "center" });
   }
 

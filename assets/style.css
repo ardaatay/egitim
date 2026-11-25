@@ -126,6 +126,24 @@ a.card:hover { border-color: var(--accent); }
 .code-tools button.run { background: #0369a1; border-color: #0369a1; }
 .code-tools button:hover { filter: brightness(1.15); }
 
+/* React playground */
+.playground { margin: 0 0 18px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.pg-ust { display: flex; gap: 6px; align-items: center; padding: 6px 8px; background: var(--code-bg); }
+.pg-ust .lang { margin-right: auto; font-size: 12px; color: #94a3b8; font-family: var(--mono); }
+.pg-ust .pg-durum { font-size: 12px; color: #94a3b8; }
+.pg-ust button { font-size: 13px; border: 1px solid #334155; background: #1e293b; color: #e2e8f0; border-radius: 6px; padding: 3px 10px; }
+.pg-ust button.run { background: #0369a1; border-color: #0369a1; }
+.playground textarea {
+  display: block; width: 100%; min-height: 120px; resize: vertical; border: 0; outline: none; margin: 0;
+  padding: 12px 14px; background: var(--code-bg); color: var(--code-text); font-family: var(--mono); font-size: 13.5px;
+  line-height: 1.5; tab-size: 2; white-space: pre; overflow: auto;
+}
+.pg-onizleme-baslik { font-size: 12px; color: var(--muted); padding: 4px 10px; border-top: 1px solid var(--border); background: var(--surface-2); }
+.playground iframe { display: block; width: 100%; height: 220px; border: 0; background: var(--surface); resize: vertical; }
+.pg-konsol { max-height: 160px; overflow: auto; padding: 6px 10px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 12.5px; background: var(--surface-2); }
+.pg-konsol .pg-error { color: var(--bad); }
+.pg-konsol .pg-warn { color: #ca8a04; }
+
 /* Quiz */
 .quiz { border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius); padding: 14px 16px; margin: 0 0 18px; }
 .quiz .q { font-weight: 600; margin-bottom: 8px; }
@@ -233,4 +251,7 @@ a.card:hover { border-color: var(--accent); }
   .lesson h1, .hero h1 { font-size: 24px; }
   .lesson-foot .btn { flex: 1; justify-content: center; }
   .lesson-foot .next { margin-left: 0; }
+  .pg-ust .lang { font-size: 11px; }
+  .pg-ust button { padding: 3px 8px; }
+  .playground iframe { height: 180px; }
 }
