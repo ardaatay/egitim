@@ -59,22 +59,22 @@
         {
           "id": "20-performans",
           "title": "Performans: memo, useMemo, useCallback ve React Compiler",
-          "draft": true
+          "minutes": 24
         },
         {
           "id": "21-routing",
           "title": "React Router ile sayfalar ve veri yükleme",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "22-sunucu-verisi",
           "title": "Sunucu verisi: TanStack Query",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "23-formlar",
           "title": "Formlar ve doğrulama: React Hook Form ve Zod",
-          "draft": true
+          "minutes": 24
         }
       ]
     },
