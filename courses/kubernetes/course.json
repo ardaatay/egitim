@@ -59,12 +59,12 @@
         {
           "id": "20-depolama",
           "title": "PersistentVolume, PVC ve StorageClass",
-          "draft": true
+          "minutes": 22
         },
         {
           "id": "21-statefulset-job",
           "title": "StatefulSet, DaemonSet, Job ve CronJob",
-          "draft": true
+          "minutes": 26
         }
       ]
     },
