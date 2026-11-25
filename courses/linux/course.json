@@ -58,7 +58,7 @@
         {
           "id": "12-find-xargs",
           "title": "find ve xargs ile toplu işler",
-          "draft": true
+          "minutes": 14
         }
       ]
     },
@@ -79,7 +79,7 @@
         {
           "id": "22-ag-portlar",
           "title": "Ağ ve portlar: ss, lsof, curl",
-          "draft": true
+          "minutes": 18
         }
       ]
     },
