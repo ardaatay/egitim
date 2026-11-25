@@ -117,17 +117,17 @@
         {
           "id": "50-teshis",
           "title": "Konteyner sorun giderme: inspect, events, nsenter, debug",
-          "draft": true
+          "minutes": 22
         },
         {
           "id": "51-guvenlik",
           "title": "Güvenlik: kullanıcı, capability, salt okunur, rootless, secret",
-          "draft": true
+          "minutes": 24
         },
         {
           "id": "52-ci-deploy",
           "title": "CI ile imaj üretme, registry ve sunucuya deploy",
-          "draft": true
+          "minutes": 26
         }
       ]
     }
