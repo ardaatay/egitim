@@ -91,17 +91,17 @@
         {
           "id": "40-helm",
           "title": "Helm: chart kullanmak ve yazmak",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "41-kustomize",
           "title": "Kustomize ile ortam farkları",
-          "draft": true
+          "minutes": 20
         },
         {
           "id": "42-gitops",
           "title": "GitOps: Argo CD ile dağıtım",
-          "draft": true
+          "minutes": 24
         }
       ]
     },
