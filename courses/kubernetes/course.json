@@ -9,62 +9,142 @@
       "title": "0. Temeller",
       "summary": "Mimari ve bildirimsel model, kubectl ile çalışmak, Pod.",
       "lessons": [
-        { "id": "01-mimari", "title": "Kubernetes mimarisi ve bildirimsel model", "minutes": 20 },
-        { "id": "02-kubectl", "title": "kubectl, kubeconfig, namespace ve YAML", "minutes": 20 },
-        { "id": "03-pod", "title": "Pod: konteynerler, yaşam döngüsü, init ve sidecar", "minutes": 22 }
+        {
+          "id": "01-mimari",
+          "title": "Kubernetes mimarisi ve bildirimsel model",
+          "minutes": 20
+        },
+        {
+          "id": "02-kubectl",
+          "title": "kubectl, kubeconfig, namespace ve YAML",
+          "minutes": 20
+        },
+        {
+          "id": "03-pod",
+          "title": "Pod: konteynerler, yaşam döngüsü, init ve sidecar",
+          "minutes": 22
+        }
       ]
     },
     {
       "title": "1. İş yükleri ve servisler",
       "summary": "Deployment ile kesintisiz sürüm geçişi, Service ile keşif, yapılandırma, sağlık ve kaynaklar.",
       "lessons": [
-        { "id": "10-deployment", "title": "ReplicaSet, Deployment, etiketler ve rollout", "draft": true },
-        { "id": "11-service", "title": "Service, DNS, kube-proxy ve EndpointSlice", "draft": true },
-        { "id": "12-configmap-secret", "title": "ConfigMap ve Secret", "draft": true },
-        { "id": "13-probe-kaynak", "title": "Probe'lar, requests/limits, QoS ve kotalar", "draft": true }
+        {
+          "id": "10-deployment",
+          "title": "ReplicaSet, Deployment, etiketler ve rollout",
+          "minutes": 24
+        },
+        {
+          "id": "11-service",
+          "title": "Service, DNS, kube-proxy ve EndpointSlice",
+          "minutes": 22
+        },
+        {
+          "id": "12-configmap-secret",
+          "title": "ConfigMap ve Secret",
+          "minutes": 22
+        },
+        {
+          "id": "13-probe-kaynak",
+          "title": "Probe'lar, requests/limits, QoS ve kotalar",
+          "minutes": 24
+        }
       ]
     },
     {
       "title": "2. Durumlu iş yükleri ve diğer denetleyiciler",
       "summary": "Kalıcı depolama, StatefulSet, DaemonSet, Job ve CronJob.",
       "lessons": [
-        { "id": "20-depolama", "title": "PersistentVolume, PVC ve StorageClass", "draft": true },
-        { "id": "21-statefulset-job", "title": "StatefulSet, DaemonSet, Job ve CronJob", "draft": true }
+        {
+          "id": "20-depolama",
+          "title": "PersistentVolume, PVC ve StorageClass",
+          "draft": true
+        },
+        {
+          "id": "21-statefulset-job",
+          "title": "StatefulSet, DaemonSet, Job ve CronJob",
+          "draft": true
+        }
       ]
     },
     {
       "title": "3. Dışa açma ve ağ güvenliği",
       "summary": "Ingress ve Gateway API, TLS, NetworkPolicy.",
       "lessons": [
-        { "id": "30-ingress", "title": "Ingress, Gateway API ve cert-manager ile TLS", "draft": true },
-        { "id": "31-networkpolicy", "title": "NetworkPolicy ile ağ izolasyonu", "draft": true }
+        {
+          "id": "30-ingress",
+          "title": "Ingress, Gateway API ve cert-manager ile TLS",
+          "draft": true
+        },
+        {
+          "id": "31-networkpolicy",
+          "title": "NetworkPolicy ile ağ izolasyonu",
+          "draft": true
+        }
       ]
     },
     {
       "title": "4. Paketleme ve dağıtım",
       "summary": "Helm, Kustomize ve GitOps ile tekrarlanabilir dağıtım.",
       "lessons": [
-        { "id": "40-helm", "title": "Helm: chart kullanmak ve yazmak", "draft": true },
-        { "id": "41-kustomize", "title": "Kustomize ile ortam farkları", "draft": true },
-        { "id": "42-gitops", "title": "GitOps: Argo CD ile dağıtım", "draft": true }
+        {
+          "id": "40-helm",
+          "title": "Helm: chart kullanmak ve yazmak",
+          "draft": true
+        },
+        {
+          "id": "41-kustomize",
+          "title": "Kustomize ile ortam farkları",
+          "draft": true
+        },
+        {
+          "id": "42-gitops",
+          "title": "GitOps: Argo CD ile dağıtım",
+          "draft": true
+        }
       ]
     },
     {
       "title": "5. Güvenlik, ölçekleme ve zamanlama",
       "summary": "RBAC ve pod güvenliği, otomatik ölçekleme, yerleşim kuralları ve kesinti bütçeleri.",
       "lessons": [
-        { "id": "50-rbac-guvenlik", "title": "RBAC, ServiceAccount, securityContext ve Pod Security", "draft": true },
-        { "id": "51-olcekleme", "title": "HPA, metrics-server, PDB ve küme ölçekleme", "draft": true },
-        { "id": "52-zamanlama", "title": "Zamanlama: affinity, taint/toleration, topoloji yayılımı", "draft": true }
+        {
+          "id": "50-rbac-guvenlik",
+          "title": "RBAC, ServiceAccount, securityContext ve Pod Security",
+          "draft": true
+        },
+        {
+          "id": "51-olcekleme",
+          "title": "HPA, metrics-server, PDB ve küme ölçekleme",
+          "draft": true
+        },
+        {
+          "id": "52-zamanlama",
+          "title": "Zamanlama: affinity, taint/toleration, topoloji yayılımı",
+          "draft": true
+        }
       ]
     },
     {
       "title": "6. Operasyon",
       "summary": "Gözlemlenebilirlik ve sorun giderme, küme kurulumu, yükseltme ve yedekleme.",
       "lessons": [
-        { "id": "60-sorun-giderme", "title": "Sorun giderme: events, describe, kubectl debug", "draft": true },
-        { "id": "61-gozlem", "title": "Loglar ve metrikler: Prometheus, Grafana, Loki", "draft": true },
-        { "id": "62-kume-operasyon", "title": "kubeadm, sürüm yükseltme, etcd yedeği, yönetilen kümeler", "draft": true }
+        {
+          "id": "60-sorun-giderme",
+          "title": "Sorun giderme: events, describe, kubectl debug",
+          "draft": true
+        },
+        {
+          "id": "61-gozlem",
+          "title": "Loglar ve metrikler: Prometheus, Grafana, Loki",
+          "draft": true
+        },
+        {
+          "id": "62-kume-operasyon",
+          "title": "kubeadm, sürüm yükseltme, etcd yedeği, yönetilen kümeler",
+          "draft": true
+        }
       ]
     }
   ]
