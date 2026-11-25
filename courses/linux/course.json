@@ -147,12 +147,12 @@
         {
           "id": "50-guvenli-betik",
           "title": "set -euo pipefail, trap, tırnaklama",
-          "draft": true
+          "minutes": 16
         },
         {
           "id": "51-deploy-betigi",
           "title": "Uçtan uca deploy betiği",
-          "draft": true
+          "minutes": 18
         }
       ]
     },
@@ -163,12 +163,12 @@
         {
           "id": "60-sorun-giderme",
           "title": "Teşhis akışı: ilk 60 saniye",
-          "draft": true
+          "minutes": 18
         },
         {
           "id": "61-strace-lsof",
           "title": "strace, lsof ve dmesg ile derine inmek",
-          "draft": true
+          "minutes": 16
         }
       ]
     }
