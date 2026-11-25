@@ -151,6 +151,61 @@ a.card:hover { border-color: var(--accent); }
 
 .empty { color: var(--muted); text-align: center; padding: 40px 0; }
 
+
+/* Layout with sidebar */
+.layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 32px; max-width: 1180px; margin: 0 auto; align-items: start; }
+.content { min-width: 0; }
+.side {
+  position: sticky; top: 76px; max-height: calc(100vh - 92px); overflow-y: auto; overscroll-behavior: contain;
+  padding: 4px 4px 24px 0; font-size: 14.5px; line-height: 1.4;
+}
+.side-title { display: block; font-weight: 700; font-size: 17px; color: var(--text); text-decoration: none; margin: 4px 0 10px; }
+.side-progress { margin-bottom: 14px; }
+.side-progress small { color: var(--muted); font-size: 12.5px; }
+.side-ch { margin-bottom: 6px; }
+.side-ch summary {
+  list-style: none; cursor: pointer; display: flex; gap: 8px; align-items: baseline; padding: 7px 8px; border-radius: 8px; font-weight: 600;
+}
+.side-ch summary::-webkit-details-marker { display: none; }
+.side-ch summary::before { content: "▸"; color: var(--muted); font-size: 12px; transition: transform .15s; }
+.side-ch[open] summary::before { transform: rotate(90deg); }
+.side-ch summary span { flex: 1; }
+.side-ch summary small { color: var(--muted); font-weight: 400; font-size: 12px; white-space: nowrap; }
+.side-ch summary:hover { background: var(--surface-2); }
+.side ul { list-style: none; margin: 2px 0 8px; padding: 0 0 0 10px; }
+.side .item { display: flex; gap: 9px; align-items: flex-start; padding: 6px 8px; border-radius: 8px; color: var(--text); text-decoration: none; }
+.side a.item:hover { background: var(--surface-2); }
+.side .item small { margin-left: auto; color: var(--muted); font-size: 11.5px; padding-left: 6px; }
+.side .mark { flex: none; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; background: var(--surface-2); color: var(--muted); margin-top: 1px; }
+.side .done .mark { background: var(--ok); color: #fff; }
+.side .current .item { background: var(--accent-soft); font-weight: 600; }
+.side .draft .item { color: var(--muted); }
+.side .draft .mark { background: transparent; border: 1px dashed var(--border); }
+.content .wrap { margin: 0; }
+
+.chapters { display: grid; gap: 12px; margin-top: 24px; }
+.chapter-card { padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.chapter-card h2 { font-size: 17px; margin: 0 0 4px; }
+.chapter-card p { margin: 0 0 6px; color: var(--muted); font-size: 15px; }
+.chapter-card small { color: var(--muted); }
+
+.toc-btn { display: none; }
+.scrim { position: fixed; inset: 0; z-index: 24; background: rgba(2,6,23,.45); }
+.scrim[hidden] { display: none; }
+
+@media (max-width: 960px) {
+  .layout { display: block; }
+  .toc-btn:not([hidden]) { display: inline-block; }
+  .side {
+    position: fixed; z-index: 25; top: 0; left: 0; bottom: 0; width: min(330px, 86vw); max-height: none;
+    background: var(--surface); border-right: 1px solid var(--border); padding: 16px 12px 40px;
+    padding-top: max(16px, env(safe-area-inset-top));
+    transform: translateX(-102%); transition: transform .2s ease;
+  }
+  .toc-open .side { transform: none; box-shadow: 10px 0 40px rgba(0,0,0,.25); }
+  .content .wrap { margin: 0 auto; }
+}
+
 /* Terminal panel */
 .terminal {
   position: fixed; z-index: 30; right: 16px; bottom: 16px; width: min(640px, calc(100vw - 32px)); height: min(440px, 60vh);

@@ -115,6 +115,46 @@
     }
   });
 
+  // ---------- sol menü (içindekiler + ilerleme) ----------
+  const tocBtn = document.getElementById("tocBtn");
+  const scrim = document.getElementById("scrim");
+  const closeToc = () => { document.body.classList.remove("toc-open"); scrim.hidden = true; };
+  tocBtn.addEventListener("click", () => {
+    const open = !document.body.classList.contains("toc-open");
+    document.body.classList.toggle("toc-open", open); scrim.hidden = !open;
+  });
+  scrim.addEventListener("click", closeToc);
+
+  function sidebarHTML(id, course, currentId) {
+    const done = doneSet();
+    const ready = flatLessons(course).filter((l) => !l.draft);
+    const fin = ready.filter((l) => done.has(id + "/" + l.id)).length;
+    const pct = ready.length ? Math.round((fin / ready.length) * 100) : 0;
+    let n = 0;
+    const chapters = course.chapters.map((ch) => {
+      const chReady = ch.lessons.filter((l) => !l.draft);
+      const chDone = chReady.filter((l) => done.has(id + "/" + l.id)).length;
+      const items = ch.lessons.map((l) => {
+        n++;
+        const d = done.has(id + "/" + l.id);
+        const cls = [l.id === currentId ? "current" : "", d ? "done" : "", l.draft ? "draft" : ""].join(" ").trim();
+        const mark = `<span class="mark">${d ? "✓" : n}</span>`;
+        return l.draft
+          ? `<li class="${cls}"><span class="item">${mark}<span>${esc(l.title)}</span><small>yakında</small></span></li>`
+          : `<li class="${cls}"><a class="item" href="#/${esc(id)}/${esc(l.id)}">${mark}<span>${esc(l.title)}</span></a></li>`;
+      }).join("");
+      const open = ch.lessons.some((l) => l.id === currentId) || !currentId || ch.open;
+      return `<details class="side-ch" ${open ? "open" : ""}><summary><span>${esc(ch.title)}</span>
+        <small>${chReady.length ? `${chDone}/${chReady.length}` : "yakında"}</small></summary><ul>${items}</ul></details>`;
+    }).join("");
+    return `<aside class="side" id="side"><a class="side-title" href="#/${esc(id)}">${course.icon || ""} ${esc(course.title)}</a>
+      <div class="side-progress"><div class="bar"><span style="width:${pct}%"></span></div><small>%${pct} · ${fin}/${ready.length} ders</small></div>
+      <nav>${chapters}</nav></aside>`;
+  }
+
+  const withSidebar = (id, course, currentId, content) =>
+    `<div class="layout">${sidebarHTML(id, course, currentId)}<div class="content">${content}</div></div>`;
+
   // ---------- sayfalar ----------
   function setCrumbs(parts) {
     crumbs.innerHTML = parts.map((p) => (p.href ? `<a href="${p.href}">${esc(p.text)}</a>` : esc(p.text))).join(" / ");
@@ -137,7 +177,7 @@
       let total = 0, finished = 0;
       try {
         const course = await fetchJSON(`courses/${c.id}/course.json`);
-        const ls = flatLessons(course); total = ls.length; finished = ls.filter((l) => done.has(c.id + "/" + l.id)).length;
+        const ls = flatLessons(course).filter((l) => !l.draft); total = ls.length; finished = ls.filter((l) => done.has(c.id + "/" + l.id)).length;
       } catch (_) {}
       const pct = total ? Math.round((finished / total) * 100) : 0;
       return `<a class="card" href="#/${esc(c.id)}"><span class="emoji">${c.icon}</span><h2>${esc(c.title)}</h2><p>${esc(c.description)}</p>
@@ -151,23 +191,28 @@
     const course = await fetchJSON(`courses/${id}/course.json`);
     setCrumbs([{ text: "Kurslar", href: "#/" }, { text: course.title }]);
     const done = doneSet();
-    let n = 0;
-    const chapters = course.chapters.map((ch) => `<section class="chapter"><h2>${esc(ch.title)}</h2><ul class="lesson-list">
-      ${ch.lessons.map((l) => { n++; const d = done.has(id + "/" + l.id);
-        return `<li class="${d ? "done" : ""}"><a href="#/${esc(id)}/${esc(l.id)}"><span class="num">${d ? "✓" : n}</span><span>${esc(l.title)}</span>
-          ${l.minutes ? `<span class="meta">${l.minutes} dk</span>` : ""}</a></li>`; }).join("")}</ul></section>`).join("");
-    const all = flatLessons(course);
+    const all = flatLessons(course).filter((l) => !l.draft);
+    const started = all.some((l) => done.has(id + "/" + l.id));
     const firstOpen = all.find((l) => !done.has(id + "/" + l.id)) || all[0];
-    app.innerHTML = `<div class="wrap"><div class="course-head"><span style="font-size:34px">${course.icon || ""}</span><h1>${esc(course.title)}</h1>
+    const chapters = course.chapters.map((ch) => {
+      const ready = ch.lessons.filter((l) => !l.draft);
+      const fin = ready.filter((l) => done.has(id + "/" + l.id)).length;
+      return `<section class="chapter-card"><h2>${esc(ch.title)}</h2>${ch.summary ? `<p>${esc(ch.summary)}</p>` : ""}
+        <small>${ready.length ? `${fin}/${ready.length} ders tamamlandı` : "yakında"}${ch.lessons.length > ready.length && ready.length ? ` · ${ch.lessons.length - ready.length} ders yolda` : ""}</small></section>`;
+    }).join("");
+    const content = `<div class="wrap"><div class="course-head"><span style="font-size:34px">${course.icon || ""}</span><h1>${esc(course.title)}</h1>
       <p>${esc(course.description || "")}</p>
-      ${firstOpen ? `<a class="btn primary" href="#/${esc(id)}/${esc(firstOpen.id)}">${done.size && all.some((l) => done.has(id + "/" + l.id)) ? "Devam et" : "Başla"} →</a>` : ""}</div>
-      ${chapters || '<p class="empty">Bu kursta henüz ders yok.</p>'}</div>`;
+      ${firstOpen ? `<a class="btn primary" href="#/${esc(id)}/${esc(firstOpen.id)}">${started ? "Devam et" : "Başla"}: ${esc(firstOpen.title)} →</a>` : ""}</div>
+      ${course.intro ? `<div class="prose" style="margin-top:20px">${renderMarkdown(course.intro)}</div>` : ""}
+      <div class="chapters">${chapters}</div></div>`;
+    app.innerHTML = withSidebar(id, course, null, content);
     termBtn.hidden = !course.terminal;
+    tocBtn.hidden = false;
   }
 
   async function lessonPage(id, lessonId) {
     const course = await fetchJSON(`courses/${id}/course.json`);
-    const all = flatLessons(course);
+    const all = flatLessons(course).filter((l) => !l.draft);
     const i = all.findIndex((l) => l.id === lessonId);
     if (i < 0) throw new Error("Ders bulunamadı");
     const lesson = all[i], prev = all[i - 1], next = all[i + 1];
@@ -175,9 +220,9 @@
     const key = id + "/" + lesson.id;
     setCrumbs([{ text: "Kurslar", href: "#/" }, { text: course.title, href: "#/" + id }, { text: lesson.title }]);
     store.set("egitim.last", { course: id, lesson: lesson.id, title: course.title + " · " + lesson.title });
-    const body = md.replace(/^#\s+.*\n/, ""); // başlığı biz basıyoruz
+    const body = md.replace(/\r\n/g, "\n").replace(/^#[ \t]+[^\n]*\n/, ""); // başlığı biz basıyoruz
     const isDone = doneSet().has(key);
-    app.innerHTML = `<article class="wrap lesson"><span class="badge">${esc(lesson.chapter)}</span>
+    app.innerHTML = withSidebar(id, course, lesson.id, `<article class="wrap lesson"><span class="badge">${esc(lesson.chapter)}</span>
       <h1>${esc(lesson.title)}</h1><div class="sub">Ders ${i + 1}/${all.length} · yaklaşık ${minutes(md)} dk okuma</div>
       <div class="prose">${renderMarkdown(body)}</div>
       <div class="lesson-foot">
@@ -185,19 +230,22 @@
         <button class="btn ${isDone ? "ok" : ""}" id="doneBtn" type="button">${isDone ? "✓ Tamamlandı" : "Tamamladım"}</button>
         ${next ? `<a class="btn primary next" href="#/${esc(id)}/${esc(next.id)}" id="nextBtn">Sonraki: ${esc(next.title)} →</a>`
                : `<a class="btn primary next" href="#/${esc(id)}">Kursa dön</a>`}
-      </div></article>`;
+      </div></article>`);
     document.getElementById("doneBtn").addEventListener("click", (e) => {
       const now = !doneSet().has(key); setDone(key, now);
       e.currentTarget.classList.toggle("ok", now); e.currentTarget.textContent = now ? "✓ Tamamlandı" : "Tamamladım";
+      document.getElementById("side").outerHTML = sidebarHTML(id, course, lesson.id);
     });
     const nb = document.getElementById("nextBtn");
     if (nb) nb.addEventListener("click", () => setDone(key, true)); // sonrakine geçmek = bitirdim
     termBtn.hidden = !course.terminal;
+    tocBtn.hidden = false;
+    document.querySelector(".side .current")?.scrollIntoView({ block: "center" });
   }
 
   async function route() {
     const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean).map(decodeURIComponent);
-    termBtn.hidden = true;
+    termBtn.hidden = true; tocBtn.hidden = true; closeToc();
     try {
       if (parts.length === 0) await homePage();
       else if (parts.length === 1) await coursePage(parts[0]);
