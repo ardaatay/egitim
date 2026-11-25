@@ -1,0 +1,7 @@
+[
+  { "id": "linux", "title": "Linux", "icon": "🐧", "description": "Komut satırından başlayıp dosyalar, izinler, süreçler ve betiklere kadar. Tarayıcıdaki gerçek Linux'ta uygula." },
+  { "id": "docker", "title": "Docker", "icon": "🐳", "description": "Konteyner mantığı, imajlar, Dockerfile, ağ ve volume'ler.", "status": "soon" },
+  { "id": "kubernetes", "title": "Kubernetes", "icon": "☸️", "description": "Pod, Deployment, Service ve kümede uygulama yönetimi.", "status": "soon" },
+  { "id": "react", "title": "React", "icon": "⚛️", "description": "Bileşenler, state, hook'lar ve gerçek bir uygulama.", "status": "soon" },
+  { "id": "oracle", "title": "Oracle", "icon": "🗄️", "description": "SQL temelleri, PL/SQL ve Oracle'a özgü konular.", "status": "soon" }
+]

@@ -1,0 +1,24 @@
+{
+  "title": "Linux",
+  "icon": "🐧",
+  "description": "Sıfırdan başlayarak Linux komut satırını öğren. Her derste komutları sağ alttaki terminalde, gerçek bir Linux üzerinde çalıştırabilirsin.",
+  "terminal": true,
+  "chapters": [
+    {
+      "title": "1. Başlangıç",
+      "lessons": [
+        { "id": "01-linux-nedir", "title": "Linux nedir, terminal neden önemli?", "minutes": 6 },
+        { "id": "02-ilk-komutlar", "title": "İlk komutlar: nerede, ne var?", "minutes": 8 },
+        { "id": "03-dosya-sistemi", "title": "Dosya sistemi ağacı ve yollar", "minutes": 9 }
+      ]
+    },
+    {
+      "title": "2. Dosyalarla çalışmak",
+      "lessons": [
+        { "id": "04-dosya-islemleri", "title": "Klasör ve dosya oluşturma, kopyalama, silme", "minutes": 10 },
+        { "id": "05-dosya-okuma", "title": "Dosyaları okumak: cat, head, tail, less, wc", "minutes": 8 },
+        { "id": "06-joker-karakterler", "title": "Joker karakterler: *, ? ve []", "minutes": 7 }
+      ]
+    }
+  ]
+}

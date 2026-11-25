@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Eğitim">
+  <title>Eğitim</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="brand" aria-label="Ana sayfa">
+      <img src="assets/icon.svg" alt="" width="26" height="26">
+      <span>Eğitim</span>
+    </a>
+    <nav class="crumbs" id="crumbs"></nav>
+    <button class="icon-btn" id="themeBtn" title="Tema değiştir" aria-label="Tema değiştir">◐</button>
+    <button class="icon-btn" id="termBtn" title="Linux terminali" aria-label="Linux terminalini aç" hidden>&gt;_</button>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <aside class="terminal" id="terminal" hidden aria-label="Linux terminali">
+    <div class="term-head">
+      <strong>Linux terminali</strong>
+      <span class="term-status" id="termStatus">kapalı</span>
+      <span class="spacer"></span>
+      <button class="icon-btn" id="termReset" title="Yeniden başlat" aria-label="Yeniden başlat">↻</button>
+      <button class="icon-btn" id="termSize" title="Büyüt / küçült" aria-label="Büyüt veya küçült">⤢</button>
+      <button class="icon-btn" id="termClose" title="Kapat" aria-label="Kapat">✕</button>
+    </div>
+    <pre class="term-out" id="termOut"></pre>
+    <form class="term-in" id="termForm" autocomplete="off">
+      <span class="prompt">$</span>
+      <input id="termInput" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" enterkeyhint="send" placeholder="komut yaz, Enter'a bas" aria-label="Komut">
+      <button type="button" class="key" data-key="tab" title="Tab (tamamla)">Tab</button>
+      <button type="button" class="key" data-key="ctrlc" title="Ctrl+C (durdur)">^C</button>
+      <button type="button" class="key" data-key="up" title="Önceki komut">↑</button>
+    </form>
+  </aside>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/dockerfile.min.js"></script>
+  <script src="assets/terminal.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
