@@ -13,10 +13,9 @@
   },
   {
     "id": "kubernetes",
-    "title": "Kubernetes",
+    "title": "Kubernetes: Kümeden Üretime",
     "icon": "☸️",
-    "description": "Pod, Deployment, Service ve kümede uygulama yönetimi.",
-    "status": "soon"
+    "description": "Mimari, Pod ve Deployment, Service, yapılandırma, depolama, Ingress, Helm/GitOps, güvenlik, ölçekleme ve küme operasyonu."
   },
   {
     "id": "react",
