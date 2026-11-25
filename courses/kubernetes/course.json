@@ -112,17 +112,17 @@
         {
           "id": "50-rbac-guvenlik",
           "title": "RBAC, ServiceAccount, securityContext ve Pod Security",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "51-olcekleme",
           "title": "HPA, metrics-server, PDB ve küme ölçekleme",
-          "draft": true
+          "minutes": 22
         },
         {
           "id": "52-zamanlama",
           "title": "Zamanlama: affinity, taint/toleration, topoloji yayılımı",
-          "draft": true
+          "minutes": 22
         }
       ]
     },
