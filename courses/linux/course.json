@@ -116,27 +116,27 @@
         {
           "id": "40-kullanicilar-izinler",
           "title": "Servis kullanıcıları, izinler, sudo",
-          "draft": true
+          "minutes": 16
         },
         {
           "id": "41-nginx",
           "title": "nginx: statik site ve reverse proxy",
-          "draft": true
+          "minutes": 20
         },
         {
           "id": "42-tls",
           "title": "TLS ve Let's Encrypt (certbot)",
-          "draft": true
+          "minutes": 16
         },
         {
           "id": "43-uygulama-deploy",
           "title": "Node/Python uygulamasını servis olarak yayınlamak",
-          "draft": true
+          "minutes": 22
         },
         {
           "id": "44-sifir-kesinti",
           "title": "Release klasörleri, symlink ve geri alma",
-          "draft": true
+          "minutes": 16
         }
       ]
     },
