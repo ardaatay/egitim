@@ -133,17 +133,17 @@
         {
           "id": "60-sorun-giderme",
           "title": "Sorun giderme: events, describe, kubectl debug",
-          "draft": true
+          "minutes": 24
         },
         {
           "id": "61-gozlem",
           "title": "Loglar ve metrikler: Prometheus, Grafana, Loki",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "62-kume-operasyon",
           "title": "kubeadm, sürüm yükseltme, etcd yedeği, yönetilen kümeler",
-          "draft": true
+          "minutes": 24
         }
       ]
     }
