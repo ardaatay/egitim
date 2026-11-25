@@ -106,17 +106,17 @@
         {
           "id": "40-typescript",
           "title": "React ile TypeScript",
-          "draft": true
+          "minutes": 24
         },
         {
           "id": "41-test",
           "title": "Test: Vitest, Testing Library ve Playwright",
-          "draft": true
+          "minutes": 28
         },
         {
           "id": "42-yayinlama",
           "title": "Build, ortam değişkenleri, Docker ve Kubernetes'e yayınlama",
-          "draft": true
+          "minutes": 30
         }
       ]
     }
