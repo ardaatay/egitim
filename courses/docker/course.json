@@ -3,7 +3,7 @@
   "icon": "🐳",
   "description": "Konteynerin çekirdekteki karşılığından başlayıp imaj ve registry, ağ, depolama, kaynak sınırları, Compose, Swarm ve üretim pratiklerine kadar.",
   "terminal": true,
-  "intro": "Linux kursunda öğrendiğin süreç, sinyal, cgroup, izin ve ağ bilgisi burada doğrudan işine yarayacak: bir konteyner, kısıtlanmış ve izole edilmiş sıradan bir Linux sürecidir.\n\n- Docker tarayıcıda çalışamadığı için uygulamalar **🧪 lab** bağlantılarındaki gerçek sunucularda yapılır. Killercoda'nın Ubuntu ortamında Docker yoksa derste kurulum komutu var.\n- Sağ alttaki **`>_`** terminali sadece ilk derste, konteynerin temelini elle kurarken kullanılıyor.\n- Komutlar Docker Engine 25+ ve `docker compose` (v2) için yazıldı.",
+  "intro": "Linux kursunda öğrendiğin süreç, sinyal, cgroup, izin ve ağ bilgisi burada doğrudan işine yarayacak: bir konteyner, kısıtlanmış ve izole edilmiş sıradan bir Linux sürecidir.\n\n- Docker tarayıcıda çalışamadığı için uygulamalar **🧪 lab** bağlantılarındaki gerçek sunucularda yapılır. Killercoda'nın Ubuntu ortamında Docker yoksa derste kurulum komutu var. Swarm bölümünde birden fazla sunucu gerektiği için Play with Docker kullanılır.\n- Sağ alttaki **`>_`** terminali sadece ilk derste, konteynerin temelini elle kurarken kullanılıyor.\n- Komutlar Docker Engine 25+ ve `docker compose` (v2) için yazıldı.",
   "chapters": [
     {
       "title": "0. Temeller",
@@ -96,17 +96,17 @@
         {
           "id": "40-swarm",
           "title": "Orkestrasyon ve Swarm: init, manager ve worker node",
-          "draft": true
+          "minutes": 22
         },
         {
           "id": "41-swarm-servis",
           "title": "Servisler, ölçekleme, rolling update ve overlay ağ",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "42-swarm-secret-stack",
           "title": "Secret, config ve stack ile uygulama dağıtımı",
-          "draft": true
+          "minutes": 24
         }
       ]
     },
