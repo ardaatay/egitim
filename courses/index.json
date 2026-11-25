@@ -7,10 +7,9 @@
   },
   {
     "id": "docker",
-    "title": "Docker",
+    "title": "Docker: İmajdan Üretime",
     "icon": "🐳",
-    "description": "Konteyner mantığı, imajlar, Dockerfile, ağ ve volume'ler.",
-    "status": "soon"
+    "description": "Konteynerin çekirdekteki karşılığı, iyi Dockerfile, ağ, depolama, kaynak sınırları, Compose ve üretimde çalıştırma."
   },
   {
     "id": "kubernetes",
