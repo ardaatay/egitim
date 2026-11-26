@@ -31,10 +31,9 @@
   },
   {
     "id": "git",
-    "title": "Git ve GitLab",
+    "title": "Git ve GitLab: İç Modelden CI/CD'ye",
     "icon": "🔀",
-    "description": "Git'in iç modeli, dallanma ve geçmişi düzenleme, ekip akışları, GitLab merge request'leri, CI/CD pipeline'ları ve runner'lar.",
-    "status": "soon"
+    "description": "Git'in iç modeli, merge/rebase ve geçmişi düzenleme, geri alma ve kurtarma, ekip akışları, GitLab merge request'leri, CI/CD pipeline'ları ve runner'lar."
   },
   {
     "id": "guvenlik",

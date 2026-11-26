@@ -1,0 +1,93 @@
+{
+  "title": "Git ve GitLab: İç Modelden CI/CD'ye",
+  "icon": "🔀",
+  "description": "Git'in nesne modeli, dallanma ve geçmişi düzenleme, geri alma ve kurtarma, ekip akışları, büyük depolar ve güvenlik; GitLab merge request'leri, CI/CD pipeline'ları ve runner'lar.",
+  "terminal": false,
+  "intro": "Bu kurs Git'i ezber komutlar olarak değil, **altındaki modelle** anlatır: bir commit aslında nedir, dal neden sadece bir işaretçidir, rebase geçmişi nasıl yeniden yazar, kaybolduğunu sandığın bir commit nasıl geri gelir. Model oturunca komutlar kendiliğinden anlam kazanır.\n\n- Git örnekleri kendi bilgisayarındaki Git ile (2.40+) çalışır. Bütün çıktılar Git 2.56 ile alındı; her derste temiz bir deneme deposu oluşturuyoruz, gerçek projelerine dokunmuyoruz.\n- GitLab bölümlerinde ücretsiz bir GitLab.com hesabı ya da kendi GitLab kurulumun yeterli.\n- Docker, Kubernetes ve React kurslarıyla bağlantılı: CI/CD bölümünde bir uygulamayı imaja çevirip kümeye yayınlayan bir pipeline kuruyoruz.",
+  "chapters": [
+    {
+      "title": "0. Git'in modeli",
+      "summary": "Nesneler, referanslar, index; günlük iş akışını doğru yapmak.",
+      "lessons": [
+        {
+          "id": "01-model",
+          "title": "Git'in iç modeli: blob, tree, commit ve referanslar",
+          "minutes": 28
+        },
+        {
+          "id": "02-gunluk",
+          "title": "Günlük iş akışı: index, commit hijyeni, diff ve log",
+          "minutes": 26
+        }
+      ]
+    },
+    {
+      "title": "1. Dallar ve geçmiş",
+      "summary": "Merge ve çakışmalar, rebase ve geçmişi düzenlemek, geri alma ve kurtarma.",
+      "lessons": [
+        {
+          "id": "10-merge",
+          "title": "Dallar, merge ve çakışma çözümü",
+          "draft": true
+        },
+        {
+          "id": "11-rebase",
+          "title": "Rebase, interaktif rebase ve temiz geçmiş",
+          "draft": true
+        },
+        {
+          "id": "12-geri-alma",
+          "title": "Geri alma ve kurtarma: reset, revert, reflog, bisect",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "2. Ekip çalışması",
+      "summary": "Uzak depolar, sürümler ve ekip akışları, büyük depolar, hook'lar ve güvenlik.",
+      "lessons": [
+        {
+          "id": "20-uzak",
+          "title": "Uzak depolar, fetch/pull/push ve sürüm etiketleri",
+          "draft": true
+        },
+        {
+          "id": "21-akislar",
+          "title": "Dallanma stratejileri ve commit kuralları",
+          "draft": true
+        },
+        {
+          "id": "22-ileri",
+          "title": "Büyük depolar, hook'lar, imzalama ve sızan gizli bilgiler",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "3. GitLab ve CI/CD",
+      "summary": "Merge request'ler ve korumalar, pipeline temelleri, ileri CI/CD, runner'lar.",
+      "lessons": [
+        {
+          "id": "30-gitlab",
+          "title": "GitLab: projeler, yetkiler, korumalı dallar ve merge request'ler",
+          "draft": true
+        },
+        {
+          "id": "31-ci-temel",
+          "title": "GitLab CI/CD temelleri: stage, job, rules, artifact ve cache",
+          "draft": true
+        },
+        {
+          "id": "32-ci-ileri",
+          "title": "İmaj build, registry, Kubernetes'e deploy ve güvenlik taramaları",
+          "draft": true
+        },
+        {
+          "id": "33-runner",
+          "title": "GitLab Runner: kurulum, executor'lar ve güvenlik",
+          "draft": true
+        }
+      ]
+    }
+  ]
+}
