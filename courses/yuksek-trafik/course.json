@@ -25,8 +25,8 @@
       "title": "2. Veritabanı ölçekleme",
       "summary": "Bağlantı havuzu, sorgu desenleri, replikasyon ve bölümleme.",
       "lessons": [
-        { "id": "20-havuz", "title": "Bağlantılar ve sorgular: havuz boyutu, N+1 ve pgbench", "draft": true },
-        { "id": "21-replika", "title": "Okuma replikaları, replikasyon gecikmesi ve parçalama", "draft": true }
+        { "id": "20-havuz", "title": "Bağlantılar ve sorgular: havuz boyutu, N+1 ve pgbench" },
+        { "id": "21-replika", "title": "Okuma replikaları, replikasyon gecikmesi ve parçalama" }
       ]
     },
     {
