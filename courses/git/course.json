@@ -70,12 +70,12 @@
         {
           "id": "30-gitlab",
           "title": "GitLab: projeler, yetkiler, korumalı dallar ve merge request'ler",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "31-ci-temel",
           "title": "GitLab CI/CD temelleri: stage, job, rules, artifact ve cache",
-          "draft": true
+          "minutes": 32
         },
         {
           "id": "32-ci-ileri",
