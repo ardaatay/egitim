@@ -12,12 +12,12 @@
     get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (_) { return d; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) {} },
   };
-  const doneSet = () => new Set(store.get("egitim.done", []));
-  function setDone(key, on) {
-    const s = doneSet(); on ? s.add(key) : s.delete(key); store.set("egitim.done", [...s]);
-  }
+  // İlerleme ve içerik assets/sync.js'teki Supabase modülünden gelir
+  const doneSet = () => window.Ilerleme.tamamlananlar();
+  const setDone = (key, on) => window.Ilerleme.isaretle(key, on);
 
   async function fetchText(url) {
+    if (url.startsWith("courses/")) return window.Icerik.metin(url.slice("courses/".length));   // korumalı kova
     if (cache[url]) return cache[url];
     const r = await fetch(url, { cache: "no-cache" });
     if (!r.ok) throw new Error(url + " bulunamadı (" + r.status + ")");
@@ -180,7 +180,7 @@
     setCrumbs([]);
     const courses = await fetchJSON("courses/index.json");
     const done = doneSet();
-    const last = store.get("egitim.last", null);
+    const last = window.Ilerleme.sonDers();
     let cont = "";
     if (last) {
       cont = `<a class="continue" href="#/${esc(last.course)}/${esc(last.lesson)}"><span style="font-size:26px">📖</span>
@@ -235,7 +235,7 @@
     const md = await fetchText(`courses/${id}/${lesson.file || lesson.id + ".md"}`);
     const key = id + "/" + lesson.id;
     setCrumbs([{ text: "Kurslar", href: "#/" }, { text: course.title, href: "#/" + id }, { text: lesson.title }]);
-    store.set("egitim.last", { course: id, lesson: lesson.id, title: course.title + " · " + lesson.title });
+    window.Ilerleme.sonDersYaz({ course: id, lesson: lesson.id, title: course.title + " · " + lesson.title });
     const body = md.replace(/\r\n/g, "\n").replace(/^#[ \t]+[^\n]*\n/, ""); // başlığı biz basıyoruz
     const isDone = doneSet().has(key);
     app.innerHTML = withSidebar(id, course, lesson.id, `<article class="wrap lesson"><span class="badge">${esc(lesson.chapter)}</span>
@@ -260,14 +260,92 @@
     document.querySelector(".side .current")?.scrollIntoView({ block: "center" });
   }
 
-  async function route() {
+  // ---------- üyelik: giriş sayfası ve kullanıcı menüsü ----------
+  function loginPage() {
+    setCrumbs([]);
+    app.innerHTML = `<div class="wrap giris"><section class="hero"><h1>Giriş yap</h1>
+      <p>Dersler sadece üyelere açık. Üyelik davetle verilir: Davet edildiğin e-posta adresini yaz, sana bir giriş bağlantısı ve kod gönderelim.</p></section>
+      <form class="giris-form" id="girisForm">
+        <label for="girisEposta">E-posta</label>
+        <input id="girisEposta" type="email" autocomplete="email" required placeholder="ad@ornek.com">
+        <button class="btn primary" type="submit">Giriş bağlantısı gönder</button>
+      </form>
+      <form class="giris-form" id="kodForm" hidden>
+        <p>E-postana bir giriş bağlantısı gönderdik. Bağlantıyı aynı tarayıcıda açabilir ya da e-postadaki 6 haneli kodu buraya yazabilirsin. E-postayı başka bir cihazda (örneğin telefonda) okuyorsan kod daha pratik.</p>
+        <label for="girisKod">Kod</label>
+        <input id="girisKod" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6,8}" maxlength="8" required placeholder="123456">
+        <button class="btn primary" type="submit">Giriş yap</button>
+        <button class="btn" type="button" id="girisGeri">Farklı bir e-posta</button>
+      </form>
+      <p class="giris-mesaj" id="girisMesaj" role="status"></p></div>`;
+    const mesaj = (t, hata) => { const m = document.getElementById("girisMesaj"); m.textContent = t; m.classList.toggle("hata", !!hata); };
+    const f1 = document.getElementById("girisForm"), f2 = document.getElementById("kodForm");
+    let eposta = "";
+    f1.addEventListener("submit", async (e) => {
+      e.preventDefault(); eposta = document.getElementById("girisEposta").value;
+      const b = f1.querySelector("button"); b.disabled = true; mesaj("Gönderiliyor…");
+      try { await window.Uyelik.girisKoduGonder(eposta); f1.hidden = true; f2.hidden = false; mesaj(""); document.getElementById("girisKod").focus(); }
+      catch (err) { mesaj(err.message, true); }
+      finally { b.disabled = false; }
+    });
+    f2.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const b = f2.querySelector("button[type=submit]"); b.disabled = true; mesaj("Doğrulanıyor…");
+      try { await window.Uyelik.koduDogrula(eposta, document.getElementById("girisKod").value); }   // oturum-degisti olayı yönlendirir
+      catch (err) { mesaj(err.message, true); b.disabled = false; }
+    });
+    document.getElementById("girisGeri").addEventListener("click", () => { f2.hidden = true; f1.hidden = false; mesaj(""); });
+  }
+
+  const uyeBtn = document.getElementById("uyeBtn");
+  const uyeMenu = document.getElementById("uyeMenu");
+  function uyeArayuzu() {
+    const k = window.Uyelik.kullanici();
+    uyeBtn.hidden = !k;
+    if (!k) { uyeMenu.hidden = true; return; }
+    uyeBtn.textContent = (k.email || "?")[0].toUpperCase();
+    uyeBtn.title = k.email;
+    document.getElementById("uyeEposta").textContent = k.email;
+  }
+  function durumGoster(d) {
+    const el = document.getElementById("uyeDurum"); if (el) { el.textContent = d.mesaj; el.classList.toggle("hata", d.tur === "hata"); }
+    uyeBtn.classList.toggle("hata", d.tur === "hata");
+  }
+  uyeBtn.addEventListener("click", () => { uyeMenu.hidden = !uyeMenu.hidden; durumGoster(window.Ilerleme.durum()); });
+  document.addEventListener("click", (e) => { if (!uyeMenu.hidden && !e.target.closest("#uyeMenu, #uyeBtn")) uyeMenu.hidden = true; });
+  document.getElementById("uyeCikis").addEventListener("click", async () => { uyeMenu.hidden = true; await window.Uyelik.cikis(); });
+  window.addEventListener("senkron-durum", (e) => durumGoster(e.detail));
+  window.addEventListener("oturum-degisti", () => { uyeArayuzu(); route(); });
+
+  // Başka bir cihazdan gelen ilerleme: sayfayı kaydırmadan sadece ilerleme göstergelerini yenile
+  window.addEventListener("ilerleme-degisti", async () => {
     const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean).map(decodeURIComponent);
+    try {
+      if (parts.length === 0) return homePage();
+      const course = await fetchJSON(`courses/${parts[0]}/course.json`);
+      const side = document.getElementById("side");
+      if (side) side.outerHTML = sidebarHTML(parts[0], course, parts[1] || null);
+      const db = document.getElementById("doneBtn");
+      if (db && parts[1]) {
+        const d = doneSet().has(parts[0] + "/" + parts[1]);
+        db.classList.toggle("ok", d); db.textContent = d ? "✓ Tamamlandı" : "Tamamladım";
+      }
+    } catch (_) {}
+  });
+
+  async function route() {
     termBtn.hidden = true; tocBtn.hidden = true; closeToc();
+    await window.Uyelik.hazir;            // giriş bağlantısındaki #access_token=... önce işlenip temizlenmeli
+    if (/access_token=|refresh_token=|error_description=/.test(location.hash)) history.replaceState(null, "", location.pathname + "#/");
+    const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean).map(decodeURIComponent);
+    uyeArayuzu();
+    if (!window.Uyelik.kullanici()) { loginPage(); window.scrollTo(0, 0); return; }
     try {
       if (parts.length === 0) await homePage();
       else if (parts.length === 1) await coursePage(parts[0]);
       else await lessonPage(parts[0], parts[1]);
     } catch (err) {
+      if (err.girisGerekli) { loginPage(); return; }
       app.innerHTML = `<div class="wrap empty"><p>Sayfa açılamadı: ${esc(err.message)}</p><p><a href="#/">Ana sayfaya dön</a></p></div>`;
     }
     window.scrollTo(0, 0);

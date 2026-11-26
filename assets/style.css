@@ -257,3 +257,23 @@ a.card:hover { border-color: var(--accent); }
   .pg-ust button { padding: 3px 8px; }
   .playground iframe { height: 180px; }
 }
+
+/* Üyelik: giriş sayfası ve hesap menüsü */
+.giris .hero { margin-top: 12px; }
+.giris-form { display: grid; gap: 10px; max-width: 420px; margin: 12px 0; }
+.giris-form label { font-weight: 600; font-size: 14px; }
+.giris-form input { font: inherit; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); }
+.giris-form input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.giris-form p { color: var(--muted); margin: 0; }
+.giris-form .btn { justify-content: center; }
+.giris-form .btn[disabled] { opacity: .6; }
+.giris-mesaj { min-height: 1.5em; color: var(--muted); }
+.giris-mesaj.hata, .uye-menu small.hata { color: var(--bad); }
+.uye-btn { font-family: var(--font); font-weight: 700; border-radius: 50%; }
+.uye-btn.hata { border-color: var(--bad); }
+.topbar { position: sticky; }
+.uye-menu { position: absolute; right: 12px; top: 56px; z-index: 30; display: grid; gap: 8px; min-width: 220px; max-width: calc(100vw - 24px);
+  padding: 14px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); box-shadow: 0 8px 24px rgb(0 0 0 / .15); }
+.uye-menu strong { overflow-wrap: anywhere; }
+.uye-menu small { color: var(--muted); }
+.giris-form[hidden], .uye-menu[hidden] { display: none; }

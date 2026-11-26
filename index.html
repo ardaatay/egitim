@@ -23,6 +23,12 @@
     <nav class="crumbs" id="crumbs"></nav>
     <button class="icon-btn" id="themeBtn" title="Tema değiştir" aria-label="Tema değiştir">◐</button>
     <button class="icon-btn" id="termBtn" title="Linux terminali" aria-label="Linux terminalini aç" hidden>&gt;_</button>
+    <button class="icon-btn uye-btn" id="uyeBtn" aria-label="Hesap" aria-haspopup="true" hidden>?</button>
+    <div class="uye-menu" id="uyeMenu" hidden>
+      <strong id="uyeEposta"></strong>
+      <small id="uyeDurum"></small>
+      <button class="btn" type="button" id="uyeCikis">Çıkış yap</button>
+    </div>
   </header>
 
   <main id="app" tabindex="-1"></main>
@@ -56,6 +62,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/nginx.min.js"></script>
   <script src="assets/terminal.js"></script>
   <script src="assets/playground.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="assets/sync.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

@@ -8,6 +8,8 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(req.url);
   // Linux çekirdeği ve öykünücü büyük; tarayıcının kendi önbelleğine bırak.
   if (url.hostname === "i.copy.sh" || url.pathname.includes("/v86")) return;
+  // Üyelik ve korumalı içerik (Supabase): kimlik doğrulamalı yanıtlar önbelleğe alınmaz
+  if (url.hostname.endsWith(".supabase.co")) return;
   e.respondWith(
     fetch(req)
       .then((res) => {
