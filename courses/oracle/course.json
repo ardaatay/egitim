@@ -85,17 +85,17 @@
         {
           "id": "30-plsql",
           "title": "PL/SQL temelleri: bloklar, değişkenler, cursor'lar, hatalar",
-          "draft": true
+          "minutes": 30
         },
         {
           "id": "31-paket",
           "title": "Prosedürler, fonksiyonlar ve paketler",
-          "draft": true
+          "minutes": 32
         },
         {
           "id": "32-bulk-trigger",
           "title": "BULK COLLECT, FORALL, trigger'lar ve zamanlanmış işler",
-          "draft": true
+          "minutes": 32
         }
       ]
     },
