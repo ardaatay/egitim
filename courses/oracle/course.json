@@ -59,22 +59,22 @@
         {
           "id": "20-sema",
           "title": "Tablolar, kısıtlar, identity ve sequence",
-          "draft": true
+          "minutes": 30
         },
         {
           "id": "21-transaction",
           "title": "Transaction'lar, okuma tutarlılığı, undo ve kilitler",
-          "draft": true
+          "minutes": 34
         },
         {
           "id": "22-indeks",
           "title": "İndeksler: B-tree, bileşik, fonksiyon tabanlı, bitmap",
-          "draft": true
+          "minutes": 32
         },
         {
           "id": "23-partition",
           "title": "Partitioning ve büyük tabloları yönetmek",
-          "draft": true
+          "minutes": 30
         }
       ]
     },
