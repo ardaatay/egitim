@@ -73,13 +73,11 @@
       "lessons": [
         {
           "id": "40-tedarik",
-          "title": "Tedarik zinciri: bağımlılıklar, SBOM, SLSA ve imzalama",
-          "draft": true
+          "title": "Tedarik zinciri: bağımlılıklar, SBOM, SLSA ve imzalama"
         },
         {
           "id": "41-altyapi",
-          "title": "Konteyner, Kubernetes ve bulut güvenliği",
-          "draft": true
+          "title": "Konteyner, Kubernetes ve bulut güvenliği"
         }
       ]
     },
