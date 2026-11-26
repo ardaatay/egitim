@@ -33,22 +33,22 @@
         {
           "id": "10-sorgular",
           "title": "Join'ler, alt sorgular ve küme operatörleri",
-          "draft": true
+          "minutes": 28
         },
         {
           "id": "11-analitik",
           "title": "Analitik fonksiyonlar: sıralama, pencereler, toplamlar",
-          "draft": true
+          "minutes": 32
         },
         {
           "id": "12-cte-merge",
           "title": "WITH, hiyerarşik sorgular, MERGE ve toplu DML",
-          "draft": true
+          "minutes": 32
         },
         {
           "id": "13-json",
           "title": "Oracle'da JSON ve JSON Duality görünümleri",
-          "draft": true
+          "minutes": 30
         }
       ]
     },
