@@ -25,9 +25,15 @@
   },
   {
     "id": "oracle",
-    "title": "Oracle",
+    "title": "Oracle Database: SQL'den Operasyona",
     "icon": "🗄️",
-    "description": "SQL temelleri, PL/SQL ve Oracle'a özgü konular.",
+    "description": "Mimari, ileri SQL ve analitik fonksiyonlar, transaction ve kilitler, indeksler, PL/SQL, execution plan, izleme, yedekleme ve operasyon."
+  },
+  {
+    "id": "git",
+    "title": "Git ve GitLab",
+    "icon": "🔀",
+    "description": "Git'in iç modeli, dallanma ve geçmişi düzenleme, ekip akışları, GitLab merge request'leri, CI/CD pipeline'ları ve runner'lar.",
     "status": "soon"
   }
 ]

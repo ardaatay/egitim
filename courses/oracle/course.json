@@ -1,0 +1,150 @@
+{
+  "title": "Oracle Database: SQL'den Operasyona",
+  "icon": "🗄️",
+  "description": "Oracle mimarisi, ileri SQL, analitik fonksiyonlar, transaction ve kilitler, indeksler, PL/SQL, execution plan ve performans, güvenlik, depolama, yedekleme ve uygulama entegrasyonu.",
+  "terminal": false,
+  "intro": "Bu kurs Oracle'ı bir \"SQL ile tablo sorgulama\" kursu olarak değil, **üretimde çalışan bir veritabanı** olarak anlatır: bir sorgu neden yavaş, bir oturum neden bekliyor, tablespace dolunca ne olur, uygulama bağlantıları nasıl yönetilir.\n\n- Örnekler **Oracle AI Database 26ai Free** (sürüm 23.26, eski adıyla 23ai) üzerinde test edildi. İlk iki derste onu Docker ile kendi makinende 1 dakikada ayağa kaldırıyoruz; kurulum istemiyorsan tarayıcıda çalışan **FreeSQL** de var.\n- `sql` blokları kopyala-yapıştır ile çalışır. Çıktıların çoğu derste gösteriliyor, kendi ortamında karşılaştırabilirsin.\n- Docker ve Linux kurslarıyla bağlantılı: veritabanını konteynerde çalıştırma, log izleme, disk ve bellek takibi.\n- Her ders bir alıştırma ve kısa testlerle biter.",
+  "chapters": [
+    {
+      "title": "0. Temeller",
+      "summary": "Mimari, kurulum ve bağlantı, Oracle SQL'in kendine özgü yanları.",
+      "lessons": [
+        {
+          "id": "01-mimari",
+          "title": "Oracle mimarisi: instance, CDB/PDB, bellek ve süreçler",
+          "minutes": 20
+        },
+        {
+          "id": "02-kurulum",
+          "title": "Docker ile Oracle 26ai Free, istemciler ve bağlantı",
+          "minutes": 20
+        },
+        {
+          "id": "03-oracle-sql",
+          "title": "Oracle SQL'in farkları: veri tipleri, NULL, tarih ve DUAL",
+          "minutes": 28
+        }
+      ]
+    },
+    {
+      "title": "1. İleri SQL",
+      "summary": "Join ve alt sorgular, analitik fonksiyonlar, CTE ve hiyerarşik sorgular, MERGE, JSON.",
+      "lessons": [
+        {
+          "id": "10-sorgular",
+          "title": "Join'ler, alt sorgular ve küme operatörleri",
+          "draft": true
+        },
+        {
+          "id": "11-analitik",
+          "title": "Analitik fonksiyonlar: sıralama, pencereler, toplamlar",
+          "draft": true
+        },
+        {
+          "id": "12-cte-merge",
+          "title": "WITH, hiyerarşik sorgular, MERGE ve toplu DML",
+          "draft": true
+        },
+        {
+          "id": "13-json",
+          "title": "Oracle'da JSON ve JSON Duality görünümleri",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "2. Şema ve tutarlılık",
+      "summary": "Tablo tasarımı ve kısıtlar, transaction'lar ve kilitler, indeksler, partitioning.",
+      "lessons": [
+        {
+          "id": "20-sema",
+          "title": "Tablolar, kısıtlar, identity ve sequence",
+          "draft": true
+        },
+        {
+          "id": "21-transaction",
+          "title": "Transaction'lar, okuma tutarlılığı, undo ve kilitler",
+          "draft": true
+        },
+        {
+          "id": "22-indeks",
+          "title": "İndeksler: B-tree, bileşik, fonksiyon tabanlı, bitmap",
+          "draft": true
+        },
+        {
+          "id": "23-partition",
+          "title": "Partitioning ve büyük tabloları yönetmek",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "3. PL/SQL",
+      "summary": "Bloklar ve hata yönetimi, prosedürler ve paketler, toplu işlemler ve trigger'lar.",
+      "lessons": [
+        {
+          "id": "30-plsql",
+          "title": "PL/SQL temelleri: bloklar, değişkenler, cursor'lar, hatalar",
+          "draft": true
+        },
+        {
+          "id": "31-paket",
+          "title": "Prosedürler, fonksiyonlar ve paketler",
+          "draft": true
+        },
+        {
+          "id": "32-bulk-trigger",
+          "title": "BULK COLLECT, FORALL, trigger'lar ve zamanlanmış işler",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "4. Performans",
+      "summary": "Execution plan okumak, optimizer ve istatistikler, oturumları ve beklemeleri izlemek.",
+      "lessons": [
+        {
+          "id": "40-plan",
+          "title": "Execution plan okumak",
+          "draft": true
+        },
+        {
+          "id": "41-optimizer",
+          "title": "Optimizer, istatistikler, bind değişkenleri ve plan kararlılığı",
+          "draft": true
+        },
+        {
+          "id": "42-izleme",
+          "title": "Oturumlar, bekleme olayları, kilit zincirleri ve yavaş SQL",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "5. Yönetim ve operasyon",
+      "summary": "Kullanıcılar ve güvenlik, depolama, yedekleme ve geri dönüş, uygulama entegrasyonu.",
+      "lessons": [
+        {
+          "id": "50-guvenlik",
+          "title": "Kullanıcılar, roller, yetkiler ve denetim",
+          "draft": true
+        },
+        {
+          "id": "51-depolama",
+          "title": "Tablespace'ler, datafile'lar, redo, undo ve temp",
+          "draft": true
+        },
+        {
+          "id": "52-yedekleme",
+          "title": "Data Pump, RMAN ve Flashback",
+          "draft": true
+        },
+        {
+          "id": "53-uygulama",
+          "title": "Uygulamadan bağlanmak: pool'lar, bind'lar, migration'lar",
+          "draft": true
+        }
+      ]
+    }
+  ]
+}
