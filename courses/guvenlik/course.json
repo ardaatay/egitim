@@ -87,13 +87,11 @@
       "lessons": [
         {
           "id": "50-test",
-          "title": "Güvenlik testi: SAST, DAST, fuzzing ve sızma testi",
-          "draft": true
+          "title": "Güvenlik testi: SAST, DAST, fuzzing ve sızma testi"
         },
         {
           "id": "51-olay",
-          "title": "Tespit, olay müdahalesi ve olay sonrası inceleme",
-          "draft": true
+          "title": "Tespit, olay müdahalesi ve olay sonrası inceleme"
         }
       ]
     }
