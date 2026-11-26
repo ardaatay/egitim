@@ -59,13 +59,11 @@
       "lessons": [
         {
           "id": "30-kripto",
-          "title": "Uygulamalı kriptografi: hash, şifreleme, imza ve TLS",
-          "draft": true
+          "title": "Uygulamalı kriptografi: hash, şifreleme, imza ve TLS"
         },
         {
           "id": "31-gizli",
-          "title": "Gizli bilgi yönetimi, loglarda veri ve KVKK",
-          "draft": true
+          "title": "Gizli bilgi yönetimi, loglarda veri ve KVKK"
         }
       ]
     },
