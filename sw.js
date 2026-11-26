@@ -1,7 +1,10 @@
 // Önce ağdan dener, olmazsa önbellekten verir: okunan dersler internetsiz de açılır.
-const CACHE = "egitim-v1";
+const CACHE = "egitim-v2";   // v2: dersler artık Supabase'te; eski önbellekteki ders dosyaları silinir
 self.addEventListener("install", () => self.skipWaiting());
-self.addEventListener("activate", (e) => e.waitUntil(self.clients.claim()));
+self.addEventListener("activate", (e) => e.waitUntil(
+  caches.keys().then((adlar) => Promise.all(adlar.filter((a) => a !== CACHE).map((a) => caches.delete(a))))
+    .then(() => self.clients.claim())
+));
 self.addEventListener("fetch", (e) => {
   const req = e.request;
   if (req.method !== "GET") return;

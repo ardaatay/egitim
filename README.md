@@ -1,6 +1,6 @@
 # Eğitim
 
-Okuyarak ilerlenen, telefonda, tablette ve bilgisayarda çalışan kişisel eğitim platformu. Sunucu gerektirmeyen statik bir sitedir ve GitHub Pages'te yayınlanır.
+Okuyarak ilerlenen, telefonda, tablette ve bilgisayarda çalışan eğitim platformu. Uygulama kabuğu GitHub Pages'te statik olarak yayınlanır; üyelik, ilerleme ve ders içerikleri Supabase'tedir. Üyelik davetle verilir.
 
 ## Yerelde çalıştırma
 
@@ -8,25 +8,23 @@ Okuyarak ilerlenen, telefonda, tablette ve bilgisayarda çalışan kişisel eği
 python -m http.server 8123
 ```
 
-Sonra tarayıcıda `http://localhost:8123` adresini aç.
+Sonra tarayıcıda `http://localhost:8123` adresini aç. Dersler yerelde de Supabase'ten okunur, bu yüzden giriş yapman gerekir (Supabase'te Redirect URLs listesinde `http://localhost:8123/**` olmalı).
 
 ## Yapı
 
 ```text
 index.html               uygulama kabuğu
-assets/app.js            sayfalar, Markdown, sorular, ilerleme (localStorage)
+assets/app.js            sayfalar, Markdown, sorular, giriş sayfası
+assets/sync.js           üyelik (Supabase Auth), korumalı içerik (Storage), ilerleme senkronizasyonu
 assets/terminal.js       tarayıcıda Linux (v86 + Buildroot, seri konsol)
 assets/linux/            Linux çekirdek görüntüsü
-courses/index.json       kurs listesi ("status": "soon" = yakında kartı)
-courses/<kurs>/course.json  bölümler ve dersler
-courses/<kurs>/<ders-id>.md ders metni
+supabase/sema.sql        ilerleme tablosu, RLS ve depolama kuralları
+supabase/KURULUM.md      Supabase kurulumu ve kullanıcı davet etme
 ```
 
-## Yeni ders eklemek
-
-1. `courses/<kurs>/` altına `<ders-id>.md` dosyasını ekle. İlk satır `# Başlık` olsun.
-2. `course.json` içinde ilgili bölüme `{ "id": "<ders-id>", "title": "...", "minutes": 8 }` ekle.
-3. Yeni kurs ise `courses/index.json` listesine ekle. Tarayıcı terminali gerekiyorsa `course.json` içinde `"terminal": true` yap.
+Ders içerikleri bu depoda değil: private `egitim-icerik` deposunda yazılır ve Supabase Storage'daki özel
+`dersler` kovasına yüklenir. Kovayı sadece davetle giriş yapmış kullanıcılar okuyabilir. Ders ekleme ve
+yayınlama adımları o deponun README dosyasındadır.
 
 ## Ders içinde özel bloklar
 

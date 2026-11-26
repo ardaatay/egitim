@@ -77,7 +77,16 @@
   //   - yanlış seçenek
   //   - [x] doğru seçenek
   //   ? açıklama (isteğe bağlı)
+  //   ya da JSON: { "question": "...", "options": ["...", "..."], "answer": 1, "explanation": "..." }
   function quizHTML(src) {
+    if (src.trim().startsWith("{")) {
+      try {
+        const j = JSON.parse(src);
+        return `<div class="quiz" data-why="${esc(j.explanation || "")}"><div class="q">${marked.parseInline(j.question || "")}</div>
+          ${(j.options || []).map((o, i) => `<button type="button" class="opt" data-right="${i === j.answer ? 1 : 0}">${marked.parseInline(o)}</button>`).join("")}
+          <div class="why" hidden></div></div>`;
+      } catch (_) { /* geçersiz JSON: aşağıdaki satır biçimiyle dene */ }
+    }
     const lines = src.split("\n").map((l) => l.trim()).filter(Boolean);
     const q = [], opts = []; let why = "";
     for (const l of lines) {
@@ -105,7 +114,15 @@
     </div>`;
   }
 
+  // lab: 1. satır başlık, 2. satır URL, kalan açıklama; ya da JSON { "title": "...", "steps": ["...", "..."] }
   function labHTML(src) {
+    if (src.trim().startsWith("{")) {
+      try {
+        const j = JSON.parse(src);
+        return `<div class="lab"><span class="emoji">🧪</span><div><strong>${esc(j.title || "Uygulama")}</strong>
+          <ol class="lab-adim">${(j.steps || []).map((s) => `<li>${marked.parseInline(s)}</li>`).join("")}</ol></div></div>`;
+      } catch (_) { /* satır biçimiyle dene */ }
+    }
     const [title, url, ...rest] = src.split("\n");
     return `<div class="lab"><span class="emoji">🧪</span><div><a href="${esc(url.trim())}" target="_blank" rel="noopener">${esc(title.trim())} ↗</a>
       <div>${marked.parseInline(rest.join(" "))}</div></div></div>`;

@@ -277,3 +277,5 @@ a.card:hover { border-color: var(--accent); }
 .uye-menu strong { overflow-wrap: anywhere; }
 .uye-menu small { color: var(--muted); }
 .giris-form[hidden], .uye-menu[hidden] { display: none; }
+.lab-adim { margin: 8px 0 0; padding-left: 20px; }
+.lab-adim li { margin: 6px 0; }

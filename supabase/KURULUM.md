@@ -27,6 +27,7 @@ Panel > **Authentication**:
 
 ## 3. Ders içeriğini yükle
 
+İçerik private `egitim-icerik` deposundadır (yerelde `C:\projelerim\egitim-icerik`); komut o klasörde çalıştırılır.
 Panel > **Project Settings > API Keys** > **Secret key** (`sb_secret_...`). Bu anahtar tam yetkilidir:
 kimseyle paylaşma, dosyaya ya da depoya yazma. Sadece kendi terminalinde ortam değişkeni olarak kullan:
 
@@ -44,8 +45,8 @@ Davet edilen kişi e-postadaki bağlantıyla ilk girişini yapar; sonraki giriş
 gelen bağlantı ya da kodla girer. Kullanıcıyı engellemek ya da silmek aynı ekrandan yapılır;
 silinen kullanıcının ilerleme kaydı da otomatik silinir.
 
-## 5. Herkese açık içeriği kaldırma (son adım)
+## 5. İçerik
 
-Dersler bugün `courses/` klasöründe ve GitHub Pages'te herkese açık. Yukarıdaki adımlar çalıştıktan ve
-girişi doğruladıktan sonra `courses/` bu depodan çıkarılıp private bir içerik deposuna taşınacak.
-Daha önce yayımlanmış içerik geçmişte, klonlarda ve önbelleklerde kalabilir; bundan sonra eklenenler korumalıdır.
+Dersler bu public depodan kaldırıldı ve private `egitim-icerik` deposuna taşındı. Bu depodaki eski commit'lerde
+`courses/` hâlâ bulunur; daha önce yayımlanmış içerik geçmişte, klonlarda ve önbelleklerde kalabilir.
+Yeni eklenen ve değiştirilen dersler sadece private depoda ve korumalı kovada bulunur.
