@@ -28,17 +28,17 @@
         {
           "id": "10-merge",
           "title": "Dallar, merge ve çakışma çözümü",
-          "draft": true
+          "minutes": 26
         },
         {
           "id": "11-rebase",
           "title": "Rebase, interaktif rebase ve temiz geçmiş",
-          "draft": true
+          "minutes": 28
         },
         {
           "id": "12-geri-alma",
           "title": "Geri alma ve kurtarma: reset, revert, reflog, bisect",
-          "draft": true
+          "minutes": 30
         }
       ]
     },
