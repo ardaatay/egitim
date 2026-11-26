@@ -37,10 +37,9 @@
   },
   {
     "id": "guvenlik",
-    "title": "Yazılım Güvenliği",
+    "title": "Yazılım Güvenliği: Tehditten Savunmaya",
     "icon": "🛡️",
-    "description": "Tehdit modelleme, OWASP Top 10, kimlik doğrulama ve yetkilendirme, gizli bilgi yönetimi, bağımlılık ve tedarik zinciri güvenliği, konteyner ve CI/CD güvenliği.",
-    "status": "soon"
+    "description": "Tehdit modelleme, enjeksiyon/XSS/CSRF/SSRF canlı saldırılarla, kimlik ve yetki, kriptografi ve gizli bilgiler, tedarik zinciri, altyapı güvenliği, test ve olay müdahalesi."
   },
   {
     "id": "yuksek-trafik",

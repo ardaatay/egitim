@@ -1,0 +1,110 @@
+{
+  "title": "Yazılım Güvenliği: Tehditten Savunmaya",
+  "icon": "🛡️",
+  "description": "Tehdit modelleme, enjeksiyon/XSS/CSRF/SSRF açıkları canlı saldırılarla, kimlik doğrulama ve yetkilendirme, kriptografi ve gizli bilgiler, tedarik zinciri, konteyner güvenliği, güvenlik testi ve olay müdahalesi.",
+  "terminal": false,
+  "intro": "Bu kurs güvenliği bir kontrol listesi olarak değil, **saldırganın gözüyle** anlatır: Her açık için önce gerçekten çalışan, açığı olan küçük bir sunucu yazıyoruz, ona `curl` ile saldırıyoruz, sonra düzeltip aynı saldırının başarısız olduğunu görüyoruz.\n\n- Örnekler Node.js 22+ ile çalışır, ek paket gerekmez (`node:http`, `node:sqlite`, `node:crypto`). Bütün çıktılar Node 24 ile alındı.\n- Örnek sunucular sadece `127.0.0.1`'e bağlanır. Açıklı kodu asla internete açık bir makinede çalıştırma.\n- Bu kursta öğrendiklerini sadece **kendi sistemlerinde** ya da açıkça izin verilmiş ortamlarda (test laboratuvarları, CTF'ler, kapsamı yazılı sızma testleri) dene. İzinsiz test, birçok ülkede (Türkiye'de TCK 243–245) suçtur.\n- Önceki kurslarla bağlantılı: Oracle'daki SQL enjeksiyonu ve VPD, Git'teki gizli bilgi sızıntıları, Kubernetes'teki RBAC ve NetworkPolicy, GitLab'daki güvenlik taramaları burada bir araya geliyor.",
+  "chapters": [
+    {
+      "title": "0. Temeller",
+      "summary": "Tehdit modelleme ve güvenli tasarım ilkeleri.",
+      "lessons": [
+        {
+          "id": "01-tehdit",
+          "title": "Tehdit modelleme: varlıklar, güven sınırları ve STRIDE",
+          "minutes": 24
+        },
+        {
+          "id": "02-ilkeler",
+          "title": "Güvenli tasarım ilkeleri ve OWASP Top 10",
+          "minutes": 22
+        }
+      ]
+    },
+    {
+      "title": "1. Web uygulama açıkları",
+      "summary": "Enjeksiyon, XSS ve CSRF, SSRF ve sunucu tarafı açıklar; her biri canlı saldırıyla.",
+      "lessons": [
+        {
+          "id": "10-enjeksiyon",
+          "title": "Enjeksiyon: SQL, komut ve dosya yolu",
+          "draft": true
+        },
+        {
+          "id": "11-xss-csrf",
+          "title": "XSS, CSP, CSRF ve CORS",
+          "draft": true
+        },
+        {
+          "id": "12-ssrf",
+          "title": "SSRF, dosya yükleme ve prototip kirliliği",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "2. Kimlik ve erişim",
+      "summary": "Parola saklama, oturumlar ve JWT, yetkilendirme hataları ve OAuth/OIDC.",
+      "lessons": [
+        {
+          "id": "20-kimlik",
+          "title": "Kimlik doğrulama: parolalar, oturumlar, JWT ve MFA",
+          "draft": true
+        },
+        {
+          "id": "21-yetki",
+          "title": "Yetkilendirme: IDOR, rol ve öznitelik tabanlı erişim, OAuth 2.0 ve OIDC",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "3. Veri ve gizli bilgiler",
+      "summary": "Uygulamalı kriptografi, gizli bilgi yönetimi ve kişisel veri.",
+      "lessons": [
+        {
+          "id": "30-kripto",
+          "title": "Uygulamalı kriptografi: hash, şifreleme, imza ve TLS",
+          "draft": true
+        },
+        {
+          "id": "31-gizli",
+          "title": "Gizli bilgi yönetimi, loglarda veri ve KVKK",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "4. Tedarik zinciri ve altyapı",
+      "summary": "Bağımlılıklar, SBOM ve imzalama; konteyner ve bulut güvenliği.",
+      "lessons": [
+        {
+          "id": "40-tedarik",
+          "title": "Tedarik zinciri: bağımlılıklar, SBOM, SLSA ve imzalama",
+          "draft": true
+        },
+        {
+          "id": "41-altyapi",
+          "title": "Konteyner, Kubernetes ve bulut güvenliği",
+          "draft": true
+        }
+      ]
+    },
+    {
+      "title": "5. Test ve operasyon",
+      "summary": "Güvenlik testleri ve olay müdahalesi.",
+      "lessons": [
+        {
+          "id": "50-test",
+          "title": "Güvenlik testi: SAST, DAST, fuzzing ve sızma testi",
+          "draft": true
+        },
+        {
+          "id": "51-olay",
+          "title": "Tespit, olay müdahalesi ve olay sonrası inceleme",
+          "draft": true
+        }
+      ]
+    }
+  ]
+}
