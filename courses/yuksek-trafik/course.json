@@ -41,8 +41,8 @@
       "title": "4. Dayanıklılık",
       "summary": "Hız sınırlama, zaman aşımı, yeniden deneme, devre kesici ve yük atma.",
       "lessons": [
-        { "id": "40-sinirlama", "title": "Hız sınırlama: token bucket, kayan pencere ve dağıtık sayaçlar", "draft": true },
-        { "id": "41-dayaniklilik", "title": "Dayanıklılık kalıpları: zaman aşımı, yeniden deneme, devre kesici", "draft": true }
+        { "id": "40-sinirlama", "title": "Hız sınırlama: token bucket, kayan pencere ve dağıtık sayaçlar" },
+        { "id": "41-dayaniklilik", "title": "Dayanıklılık kalıpları: zaman aşımı, yeniden deneme, devre kesici" }
       ]
     },
     {
