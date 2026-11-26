@@ -106,17 +106,17 @@
         {
           "id": "40-plan",
           "title": "Execution plan okumak",
-          "draft": true
+          "minutes": 32
         },
         {
           "id": "41-optimizer",
           "title": "Optimizer, istatistikler, bind değişkenleri ve plan kararlılığı",
-          "draft": true
+          "minutes": 34
         },
         {
           "id": "42-izleme",
           "title": "Oturumlar, bekleme olayları, kilit zincirleri ve yavaş SQL",
-          "draft": true
+          "minutes": 32
         }
       ]
     },
