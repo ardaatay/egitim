@@ -89,6 +89,8 @@ Kursta örnekleri konteynerdeki SQL\*Plus ile çalıştırıyoruz, çünkü hiç
 docker exec -it ora-egitim sqlplus egitim/egitim@FREEPDB1
 ```
 
+> **Dikkat:** `@FREEPDB1` kısa adı, imajın `tnsnames.ora` dosyasından çözülür ve oradaki tanımda host boştur (`HOST=`), yani makinenin kendi adı çözümlenir. Konteynerin isim çözümlemesi yavaşlarsa (örneğin Docker Desktop'ta bilgisayar uykudan uyandıktan sonra saat kayması yaşanınca) her bağlantı 15–25 saniye sürebilir. Böyle bir durumda EZConnect kullan: `sqlplus egitim/egitim@localhost:1521/FREEPDB1`. Uygulama dersinde bu durumu ölçüyoruz.
+
 SQL\*Plus çıktısını okunur yapmak için oturum başında şunları ayarla (ya da `~/.sqlplus/login.sql`'e koy):
 
 ```sql

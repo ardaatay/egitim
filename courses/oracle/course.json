@@ -127,22 +127,22 @@
         {
           "id": "50-guvenlik",
           "title": "Kullanıcılar, roller, yetkiler ve denetim",
-          "draft": true
+          "minutes": 34
         },
         {
           "id": "51-depolama",
           "title": "Tablespace'ler, datafile'lar, redo, undo ve temp",
-          "draft": true
+          "minutes": 30
         },
         {
           "id": "52-yedekleme",
           "title": "Data Pump, RMAN ve Flashback",
-          "draft": true
+          "minutes": 34
         },
         {
           "id": "53-uygulama",
           "title": "Uygulamadan bağlanmak: pool'lar, bind'lar, migration'lar",
-          "draft": true
+          "minutes": 30
         }
       ]
     }
