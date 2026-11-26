@@ -45,13 +45,11 @@
       "lessons": [
         {
           "id": "20-kimlik",
-          "title": "Kimlik doğrulama: parolalar, oturumlar, JWT ve MFA",
-          "draft": true
+          "title": "Kimlik doğrulama: parolalar, oturumlar, JWT ve MFA"
         },
         {
           "id": "21-yetki",
-          "title": "Yetkilendirme: IDOR, rol ve öznitelik tabanlı erişim, OAuth 2.0 ve OIDC",
-          "draft": true
+          "title": "Yetkilendirme: IDOR, rol ve öznitelik tabanlı erişim, OAuth 2.0 ve OIDC"
         }
       ]
     },
