@@ -63,7 +63,8 @@ export async function yukle({ url, hiz, sure, tohum = 1, zamanAsimi = 10_000, ke
       while (sonraki <= simdi && sonraki < bitis) {
         const planlanan = sonraki;
         gonderilen++; degis(+1);
-        const istek = http.get(url, { agent: ajan, timeout: zamanAsimi }, (yanit) => {
+        const hedef = typeof url === "function" ? url(rastgele) : url;   // URL bir fonksiyon da olabilir
+        const istek = http.get(hedef, { agent: ajan, timeout: zamanAsimi }, (yanit) => {
           yanit.resume();
           yanit.on("end", () => {
             const ms = performance.now() - planlanan;

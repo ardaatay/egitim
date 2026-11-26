@@ -17,8 +17,8 @@
       "title": "1. Önbellekleme ve ters vekil",
       "summary": "Uygulama önbelleği, önbellek fırtınası, HTTP önbelleği ve nginx.",
       "lessons": [
-        { "id": "10-onbellek", "title": "Önbellekleme: cache-aside, geçersizleştirme ve önbellek fırtınası", "draft": true },
-        { "id": "11-vekil", "title": "Ters vekil: yük dengeleme, HTTP önbelleği ve nginx", "draft": true }
+        { "id": "10-onbellek", "title": "Önbellekleme: cache-aside, geçersizleştirme ve önbellek fırtınası" },
+        { "id": "11-vekil", "title": "Ters vekil: yük dengeleme, HTTP önbelleği ve nginx" }
       ]
     },
     {
