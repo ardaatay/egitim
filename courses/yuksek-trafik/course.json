@@ -49,8 +49,8 @@
       "title": "5. Ölçme ve operasyon",
       "summary": "Yük testi metodolojisi, gözlemlenebilirlik, SLO ve otomatik ölçekleme.",
       "lessons": [
-        { "id": "50-yuk", "title": "Yük testi: açık/kapalı model, koordineli ihmal ve kapasite planı", "draft": true },
-        { "id": "51-gozlem", "title": "Gözlemlenebilirlik, SLO ve otomatik ölçekleme", "draft": true }
+        { "id": "50-yuk", "title": "Yük testi: açık/kapalı model, koordineli ihmal ve kapasite planı" },
+        { "id": "51-gozlem", "title": "Gözlemlenebilirlik, SLO ve otomatik ölçekleme" }
       ]
     }
   ]
