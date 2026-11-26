@@ -80,12 +80,12 @@
         {
           "id": "32-ci-ileri",
           "title": "İmaj build, registry, Kubernetes'e deploy ve güvenlik taramaları",
-          "draft": true
+          "minutes": 34
         },
         {
           "id": "33-runner",
           "title": "GitLab Runner: kurulum, executor'lar ve güvenlik",
-          "draft": true
+          "minutes": 30
         }
       ]
     }
