@@ -35,5 +35,19 @@
     "icon": "🔀",
     "description": "Git'in iç modeli, dallanma ve geçmişi düzenleme, ekip akışları, GitLab merge request'leri, CI/CD pipeline'ları ve runner'lar.",
     "status": "soon"
+  },
+  {
+    "id": "guvenlik",
+    "title": "Yazılım Güvenliği",
+    "icon": "🛡️",
+    "description": "Tehdit modelleme, OWASP Top 10, kimlik doğrulama ve yetkilendirme, gizli bilgi yönetimi, bağımlılık ve tedarik zinciri güvenliği, konteyner ve CI/CD güvenliği.",
+    "status": "soon"
+  },
+  {
+    "id": "yuksek-trafik",
+    "title": "Yüksek Trafikli Uygulama Geliştirme",
+    "icon": "🚀",
+    "description": "Ölçeklenebilir mimari, önbellekleme, kuyruklar ve asenkron işleme, veritabanı ölçekleme, hız sınırlama, dayanıklılık kalıpları, yük testi ve gözlemlenebilirlik.",
+    "status": "soon"
   }
 ]
