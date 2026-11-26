@@ -27,18 +27,15 @@
       "lessons": [
         {
           "id": "10-enjeksiyon",
-          "title": "Enjeksiyon: SQL, komut ve dosya yolu",
-          "draft": true
+          "title": "Enjeksiyon: SQL, komut ve dosya yolu"
         },
         {
           "id": "11-xss-csrf",
-          "title": "XSS, CSP, CSRF ve CORS",
-          "draft": true
+          "title": "XSS, CSP, CSRF ve CORS"
         },
         {
           "id": "12-ssrf",
-          "title": "SSRF, dosya yükleme ve prototip kirliliği",
-          "draft": true
+          "title": "SSRF, dosya yükleme ve prototip kirliliği"
         }
       ]
     },
