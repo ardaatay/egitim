@@ -1,0 +1,57 @@
+{
+  "title": "Yüksek Trafikli Uygulama Geliştirme",
+  "icon": "🚀",
+  "description": "Kapasite modeli ve kuyruk teorisi, Node.js performansı, önbellekleme ve ters vekil, veritabanı ölçekleme, kuyruklar ve asenkron işleme, hız sınırlama ve dayanıklılık kalıpları, yük testi ve gözlemlenebilirlik.",
+  "terminal": false,
+  "intro": "Bu kurs \"daha fazla sunucu ekle\" demeden önce sorulması gereken soruları anlatır: Sistem neden yavaşlıyor, darboğaz nerede, bir önlem neyi düzeltir ve neyi bozar? Her konuda önce **ölçüyor**, sonra değiştiriyor, sonra yeniden ölçüyoruz.\n\n- Örnekler Node.js 22+ ile çalışır (`node:http`, `perf_hooks`, `worker_threads`); yük üreticisini de kendimiz yazıyoruz. Bütün çıktılar Node 24 ile, 16 çekirdekli bir geliştirme makinesinde alındı; senin rakamların farklı olacak, **oranlar ve eğilimler** önemli.\n- Veritabanı örnekleri resmî `postgres:17-alpine` imajıyla ve içindeki `pgbench`/`psql` ile, ters vekil örnekleri `nginx:alpine` ile Docker'da çalışır.\n- Yük testlerini yalnızca kendi makinende ya da kendi test ortamında çalıştır; başkasının sistemine yük göndermek bir hizmet dışı bırakma saldırısıdır.\n- Önceki kurslarla bağlantılı: Linux'taki kaynak yönetimi, Kubernetes'teki HPA ve kaynak limitleri, Oracle'daki indeks ve plan analizi, Güvenlik kursundaki hız sınırlama ve ReDoS burada birleşiyor.",
+  "chapters": [
+    {
+      "title": "0. Temeller",
+      "summary": "Kapasite modeli, gecikme yüzdelikleri ve Node.js'in çalışma modeli.",
+      "lessons": [
+        { "id": "01-kapasite", "title": "Kapasite modeli: gecikme, verim, Little yasası ve kuyruklar" },
+        { "id": "02-node", "title": "Node.js performansı: olay döngüsü, worker'lar ve bağlantılar" }
+      ]
+    },
+    {
+      "title": "1. Önbellekleme ve ters vekil",
+      "summary": "Uygulama önbelleği, önbellek fırtınası, HTTP önbelleği ve nginx.",
+      "lessons": [
+        { "id": "10-onbellek", "title": "Önbellekleme: cache-aside, geçersizleştirme ve önbellek fırtınası", "draft": true },
+        { "id": "11-vekil", "title": "Ters vekil: yük dengeleme, HTTP önbelleği ve nginx", "draft": true }
+      ]
+    },
+    {
+      "title": "2. Veritabanı ölçekleme",
+      "summary": "Bağlantı havuzu, sorgu desenleri, replikasyon ve bölümleme.",
+      "lessons": [
+        { "id": "20-havuz", "title": "Bağlantılar ve sorgular: havuz boyutu, N+1 ve pgbench", "draft": true },
+        { "id": "21-replika", "title": "Okuma replikaları, replikasyon gecikmesi ve parçalama", "draft": true }
+      ]
+    },
+    {
+      "title": "3. Asenkron işleme",
+      "summary": "Kuyruklar, idempotency, outbox ve olay akışları.",
+      "lessons": [
+        { "id": "30-kuyruk", "title": "Kuyruklar: SKIP LOCKED, idempotency ve outbox", "draft": true },
+        { "id": "31-akis", "title": "Olay akışları: bölümler, tüketici grupları ve sıralama", "draft": true }
+      ]
+    },
+    {
+      "title": "4. Dayanıklılık",
+      "summary": "Hız sınırlama, zaman aşımı, yeniden deneme, devre kesici ve yük atma.",
+      "lessons": [
+        { "id": "40-sinirlama", "title": "Hız sınırlama: token bucket, kayan pencere ve dağıtık sayaçlar", "draft": true },
+        { "id": "41-dayaniklilik", "title": "Dayanıklılık kalıpları: zaman aşımı, yeniden deneme, devre kesici", "draft": true }
+      ]
+    },
+    {
+      "title": "5. Ölçme ve operasyon",
+      "summary": "Yük testi metodolojisi, gözlemlenebilirlik, SLO ve otomatik ölçekleme.",
+      "lessons": [
+        { "id": "50-yuk", "title": "Yük testi: açık/kapalı model, koordineli ihmal ve kapasite planı", "draft": true },
+        { "id": "51-gozlem", "title": "Gözlemlenebilirlik, SLO ve otomatik ölçekleme", "draft": true }
+      ]
+    }
+  ]
+}

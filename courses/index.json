@@ -45,7 +45,6 @@
     "id": "yuksek-trafik",
     "title": "Yüksek Trafikli Uygulama Geliştirme",
     "icon": "🚀",
-    "description": "Ölçeklenebilir mimari, önbellekleme, kuyruklar ve asenkron işleme, veritabanı ölçekleme, hız sınırlama, dayanıklılık kalıpları, yük testi ve gözlemlenebilirlik.",
-    "status": "soon"
+    "description": "Kapasite modeli ve kuyruk teorisi, Node.js performansı, önbellekleme ve ters vekil, veritabanı ölçekleme, kuyruklar, hız sınırlama ve dayanıklılık, yük testi ve gözlemlenebilirlik."
   }
 ]
