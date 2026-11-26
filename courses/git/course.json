@@ -49,12 +49,12 @@
         {
           "id": "20-uzak",
           "title": "Uzak depolar, fetch/pull/push ve sürüm etiketleri",
-          "draft": true
+          "minutes": 28
         },
         {
           "id": "21-akislar",
           "title": "Dallanma stratejileri ve commit kuralları",
-          "draft": true
+          "minutes": 24
         },
         {
           "id": "22-ileri",
